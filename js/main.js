@@ -45,44 +45,44 @@
 [ End table content ]
 ======================================*/
 
-(function($) {
-  "use strict";
+(function ($) {
+    "use strict";
 
-    jQuery(document).ready(function(){
-      
+    jQuery(document).ready(function () {
+
         /* --------------------------------------------------------
             1. Variables
         --------------------------------------------------------- */
         var $window = $(window),
-        $body = $('body');
+            $body = $('body');
 
         /* --------------------------------------------------------
             2. Mobile Menu
         --------------------------------------------------------- */
-         /* ---------------------------------
-            Utilize Function 
-        ----------------------------------- */
+        /* ---------------------------------
+           Utilize Function 
+       ----------------------------------- */
         (function () {
-            var $ltn__utilizeToggle = $('.ltn__utilize-toggle'),
-                $ltn__utilize = $('.ltn__utilize'),
-                $ltn__utilizeOverlay = $('.ltn__utilize-overlay'),
+            var $nikhoj__utilizeToggle = $('.nikhoj__utilize-toggle'),
+                $nikhoj__utilize = $('.nikhoj__utilize'),
+                $nikhoj__utilizeOverlay = $('.nikhoj__utilize-overlay'),
                 $mobileMenuToggle = $('.mobile-menu-toggle');
-            $ltn__utilizeToggle.on('click', function (e) {
+            $nikhoj__utilizeToggle.on('click', function (e) {
                 e.preventDefault();
                 var $this = $(this),
                     $target = $this.attr('href');
-                $body.addClass('ltn__utilize-open');
-                $($target).addClass('ltn__utilize-open');
-                $ltn__utilizeOverlay.fadeIn();
+                $body.addClass('nikhoj__utilize-open');
+                $($target).addClass('nikhoj__utilize-open');
+                $nikhoj__utilizeOverlay.fadeIn();
                 if ($this.parent().hasClass('mobile-menu-toggle')) {
                     $this.addClass('close');
                 }
             });
-            $('.ltn__utilize-close, .ltn__utilize-overlay').on('click', function (e) {
+            $('.nikhoj__utilize-close, .nikhoj__utilize-overlay').on('click', function (e) {
                 e.preventDefault();
-                $body.removeClass('ltn__utilize-open');
-                $ltn__utilize.removeClass('ltn__utilize-open');
-                $ltn__utilizeOverlay.fadeOut();
+                $body.removeClass('nikhoj__utilize-open');
+                $nikhoj__utilize.removeClass('nikhoj__utilize-open');
+                $nikhoj__utilizeOverlay.fadeOut();
                 $mobileMenuToggle.find('a').removeClass('close');
             });
         })();
@@ -90,15 +90,15 @@
         /* ------------------------------------
             Utilize Menu
         ----------------------------------- */
-        function mobileltn__utilizeMenu() {
-            var $ltn__utilizeNav = $('.ltn__utilize-menu, .overlay-menu'),
-                $ltn__utilizeNavSubMenu = $ltn__utilizeNav.find('.sub-menu');
+        function mobilenikhoj__utilizeMenu() {
+            var $nikhoj__utilizeNav = $('.nikhoj__utilize-menu, .overlay-menu'),
+                $nikhoj__utilizeNavSubMenu = $nikhoj__utilizeNav.find('.sub-menu');
 
             /*Add Toggle Button With Off Canvas Sub Menu*/
-            $ltn__utilizeNavSubMenu.parent().prepend('<span class="menu-expand"></span>');
+            $nikhoj__utilizeNavSubMenu.parent().prepend('<span class="menu-expand"></span>');
 
             /*Category Sub Menu Toggle*/
-            $ltn__utilizeNav.on('click', 'li a, .menu-expand', function (e) {
+            $nikhoj__utilizeNav.on('click', 'li a, .menu-expand', function (e) {
                 var $this = $(this);
                 if ($this.attr('href') === '#' || $this.hasClass('menu-expand')) {
                     e.preventDefault();
@@ -116,18 +116,18 @@
                 }
             });
         }
-        mobileltn__utilizeMenu();
+        mobilenikhoj__utilizeMenu();
 
         /* --------------------------------------------------------
             3. Mega Menu
         --------------------------------------------------------- */
-        $('.mega-menu').each(function(){
-            if($(this).children('li').length){
+        $('.mega-menu').each(function () {
+            if ($(this).children('li').length) {
                 var ulChildren = $(this).children('li').length;
-                $(this).addClass('column-'+ulChildren)
+                $(this).addClass('column-' + ulChildren)
             }
         });
-        
+
 
         /* Remove Attribute( href ) from sub-menu title in mega-menu */
         /*
@@ -138,11 +138,11 @@
         /* Mega Munu  */
         /* $(".mega-menu").parent().css({"position": "inherit"}); */
         $(".mega-menu").parent().addClass("mega-menu-parent");
-        
+
 
         /* Add space for Elementor Menu Anchor link */
-        $( window ).on( 'elementor/frontend/init', function() {
-            elementorFrontend.hooks.addFilter( 'frontend/handlers/menu_anchor/scroll_top_distance', function( scrollTop ) {
+        $(window).on('elementor/frontend/init', function () {
+            elementorFrontend.hooks.addFilter('frontend/handlers/menu_anchor/scroll_top_distance', function (scrollTop) {
                 return scrollTop - 75;
             });
         });
@@ -151,57 +151,57 @@
             3-2. Category Menu
         --------------------------------------------------------- */
 
-        $('.ltn__category-menu-title').on('click', function(){
-            $('.ltn__category-menu-toggle').slideToggle(500);
-        });	
+        $('.nikhoj__category-menu-title').on('click', function () {
+            $('.nikhoj__category-menu-toggle').slideToggle(500);
+        });
 
         /* Category Menu More Item show */
-        $('.ltn__category-menu-more-item-parent').on('click', function(){
-            $('.ltn__category-menu-more-item-child').slideToggle();
+        $('.nikhoj__category-menu-more-item-parent').on('click', function () {
+            $('.nikhoj__category-menu-more-item-child').slideToggle();
             $(this).toggleClass('rx-change');
 
         });
 
         /* Category Submenu Column Count */
-        $('.ltn__category-submenu').each(function(){
-            if($(this).children('li').length){
+        $('.nikhoj__category-submenu').each(function () {
+            if ($(this).children('li').length) {
                 var ulChildren = $(this).children('li').length;
-                $(this).addClass('ltn__category-column-no-'+ulChildren)
+                $(this).addClass('nikhoj__category-column-no-' + ulChildren)
             }
         });
 
         /* Category Menu Responsive */
-        function ltn__CategoryMenuToggle(){
-            $('.ltn__category-menu-toggle .ltn__category-menu-drop > a').on('click', function(){
-            if($(window).width() < 991){
-                $(this).removeAttr('href');
-                var element = $(this).parent('li');
-                if (element.hasClass('open')) {
-                    element.removeClass('open');
-                    element.find('li').removeClass('open');
-                    element.find('ul').slideUp();
+        function nikhoj__CategoryMenuToggle() {
+            $('.nikhoj__category-menu-toggle .nikhoj__category-menu-drop > a').on('click', function () {
+                if ($(window).width() < 991) {
+                    $(this).removeAttr('href');
+                    var element = $(this).parent('li');
+                    if (element.hasClass('open')) {
+                        element.removeClass('open');
+                        element.find('li').removeClass('open');
+                        element.find('ul').slideUp();
+                    }
+                    else {
+                        element.addClass('open');
+                        element.children('ul').slideDown();
+                        element.siblings('li').children('ul').slideUp();
+                        element.siblings('li').removeClass('open');
+                        element.siblings('li').find('li').removeClass('open');
+                        element.siblings('li').find('ul').slideUp();
+                    }
                 }
-                else {
-                    element.addClass('open');
-                    element.children('ul').slideDown();
-                    element.siblings('li').children('ul').slideUp();
-                    element.siblings('li').removeClass('open');
-                    element.siblings('li').find('li').removeClass('open');
-                    element.siblings('li').find('ul').slideUp();
-                }
-            }
             });
-            $('.ltn__category-menu-toggle .ltn__category-menu-drop > a').append('<span class="expand"></span>');
+            $('.nikhoj__category-menu-toggle .nikhoj__category-menu-drop > a').append('<span class="expand"></span>');
         }
-        ltn__CategoryMenuToggle();
+        nikhoj__CategoryMenuToggle();
 
 
         /* ---------------------------------------------------------
             4. One Page Navigation ( jQuery Easing Plugin )
         --------------------------------------------------------- */
         // jQuery for page scrolling feature - requires jQuery Easing plugin
-        $(function() {
-            $('a.page-scroll').bind('click', function(event) {
+        $(function () {
+            $('a.page-scroll').bind('click', function (event) {
                 var $anchor = $(this);
                 $('html, body').stop().animate({
                     scrollTop: $($anchor.attr('href')).offset().top
@@ -215,7 +215,7 @@
             5. Toogle Search
         -------------------------------------------------------- */
         // Handle click on toggle search button
-        $('.header-search-1').on('click', function() {
+        $('.header-search-1').on('click', function () {
             $('.header-search-1, .header-search-1-form').toggleClass('search-open');
             return false;
         });
@@ -231,10 +231,10 @@
             7. Background Image
         --------------------------------------------------------- */
         var $backgroundImage = $('.bg-image, .bg-image-top');
-        $backgroundImage.each(function() {
+        $backgroundImage.each(function () {
             var $this = $(this),
                 $bgImage = $this.data('bs-bg');
-            $this.css('background-image', 'url('+$bgImage+')');
+            $this.css('background-image', 'url(' + $bgImage + ')');
         });
 
 
@@ -255,30 +255,30 @@
         --------------------------------------------------------- */
         $('select').niceSelect();
 
-        
+
         /* --------------------------------------------------------
             11. Default active and hover item active
         --------------------------------------------------------- */
-        var ltn__active_item = $('.ltn__feature-item-6, .ltn__our-journey-wrap ul li, .ltn__pricing-plan-item')
-        ltn__active_item.mouseover(function() {
-            ltn__active_item.removeClass('active');
+        var nikhoj__active_item = $('.nikhoj__feature-item-6, .nikhoj__our-journey-wrap ul li, .nikhoj__pricing-plan-item')
+        nikhoj__active_item.mouseover(function () {
+            nikhoj__active_item.removeClass('active');
             $(this).addClass('active');
         });
 
         /* --------------------------------------------------------
             12. Product Details Page
         --------------------------------------------------------- */
-        $('.ltn__shop-details-large-img').slick({
+        $('.nikhoj__shop-details-large-img').slick({
             slidesToShow: 1,
             slidesToScroll: 1,
             arrows: false,
             fade: true,
-            asNavFor: '.ltn__shop-details-small-img'
+            asNavFor: '.nikhoj__shop-details-small-img'
         });
-        $('.ltn__shop-details-small-img').slick({
+        $('.nikhoj__shop-details-small-img').slick({
             slidesToShow: 4,
             slidesToScroll: 1,
-            asNavFor: '.ltn__shop-details-large-img',
+            asNavFor: '.nikhoj__shop-details-large-img',
             dots: false,
             arrows: true,
             focusOnSelect: true,
@@ -308,14 +308,14 @@
                 }
             ]
         });
-                        
+
         /* --------------------------------------------------------
             13. Isotope Gallery Active  ( Gallery / Portfolio )
         -------------------------------------------------------- */
-        var $ltnGalleryActive = $('.ltn__gallery-active'),
-            $ltnGalleryFilterMenu = $('.ltn__gallery-filter-menu');
+        var $ltnGalleryActive = $('.nikhoj__gallery-active'),
+            $ltnGalleryFilterMenu = $('.nikhoj__gallery-filter-menu');
         /*Filter*/
-        $ltnGalleryFilterMenu.on( 'click', 'button, a', function() {
+        $ltnGalleryFilterMenu.on('click', 'button, a', function () {
             var $this = $(this),
                 $filterValue = $this.attr('data-filter');
             $ltnGalleryFilterMenu.find('button, a').removeClass('active');
@@ -323,15 +323,15 @@
             $ltnGalleryActive.isotope({ filter: $filterValue });
         });
         /*Grid*/
-        $ltnGalleryActive.each(function(){
+        $ltnGalleryActive.each(function () {
             var $this = $(this),
-                $galleryFilterItem = '.ltn__gallery-item';
-            $this.imagesLoaded( function() {
+                $galleryFilterItem = '.nikhoj__gallery-item';
+            $this.imagesLoaded(function () {
                 $this.isotope({
                     itemSelector: $galleryFilterItem,
                     percentPosition: true,
                     masonry: {
-                        columnWidth: '.ltn__gallery-sizer',
+                        columnWidth: '.nikhoj__gallery-sizer',
                     }
                 });
             });
@@ -350,7 +350,7 @@
         /* --------------------------------------------------------
             15. Slider One Active 
         --------------------------------------------------------- */
-        $('.ltn__slide-one-active').slick({
+        $('.nikhoj__slide-one-active').slick({
             autoplay: false,
             autoplaySpeed: 2000,
             arrows: true,
@@ -372,13 +372,13 @@
                     }
                 }
             ]
-        }).on('afterChange', function(){
+        }).on('afterChange', function () {
             new WOW().init();
         });
         /* --------------------------------------------------------
             15-2. Slider Active 2
         --------------------------------------------------------- */
-        $('.ltn__slide-active-2').slick({
+        $('.nikhoj__slide-active-2').slick({
             autoplay: false,
             autoplaySpeed: 2000,
             arrows: false,
@@ -400,31 +400,31 @@
                     }
                 }
             ]
-        }).on('afterChange', function(){
+        }).on('afterChange', function () {
             new WOW().init();
         });
 
-        
+
         /*----------------------
             Slider 11 active
         -----------------------*/
-        $('.ltn__slider-11-active').on('init reInit afterChange', function(event, slick, currentSlide, nextSlide){
+        $('.nikhoj__slider-11-active').on('init reInit afterChange', function (event, slick, currentSlide, nextSlide) {
             var i = (currentSlide ? currentSlide : 0) + 1;
-            $('.ltn__slider-11-pagination-count .count').text('0'+i);
-            $('.ltn__slider-11-pagination-count .total').text('0' + slick.slideCount);
+            $('.nikhoj__slider-11-pagination-count .count').text('0' + i);
+            $('.nikhoj__slider-11-pagination-count .total').text('0' + slick.slideCount);
 
-            $('.ltn__slider-11-slide-item-count .count').text('0'+i);
-            $('.ltn__slider-11-slide-item-count .total').text('/0' + slick.slideCount);
+            $('.nikhoj__slider-11-slide-item-count .count').text('0' + i);
+            $('.nikhoj__slider-11-slide-item-count .total').text('/0' + slick.slideCount);
             new WOW().init();
         }).slick({
             dots: false, /* slider left or right side pagination count with line */
             arrows: false, /* slider arrow  */
-            appendDots: '.ltn__slider-11-pagination-count',
+            appendDots: '.nikhoj__slider-11-pagination-count',
             infinite: true,
             autoplay: false,
             autoplaySpeed: 10000,
             speed: 500,
-            asNavFor: '.ltn__slider-11-img-slide-arrow-active',
+            asNavFor: '.nikhoj__slider-11-img-slide-arrow-active',
             slidesToShow: 1,
             slidesToScroll: 1,
             prevArrow: '<a class="slick-prev"><i class="fas fa-arrow-left" alt="Arrow Icon"></i></a>',
@@ -469,13 +469,13 @@
             ]
         });
 
-        $('.ltn__slider-11-img-slide-arrow-active').slick({
+        $('.nikhoj__slider-11-img-slide-arrow-active').slick({
             slidesToShow: 3,
             slidesToScroll: 1,
             initialSlide: 2,
             centerMode: false,
             centerPadding: '0px',
-            asNavFor: '.ltn__slider-11-active',
+            asNavFor: '.nikhoj__slider-11-active',
             dots: false, /* image slide dots */
             arrows: false, /* image slide arrow */
             centerMode: true,
@@ -517,7 +517,7 @@
         /* --------------------------------------------------------
             16-1. Product Slider One
         --------------------------------------------------------- */
-        $('.ltn__product-slider-one-active').slick({
+        $('.nikhoj__product-slider-one-active').slick({
             arrows: true,
             dots: false,
             infinite: true,
@@ -555,7 +555,7 @@
         /* --------------------------------------------------------
             16-1. Product Slider One
         --------------------------------------------------------- */
-        $('.ltn__product-slider-item-three-active').slick({
+        $('.nikhoj__product-slider-item-three-active').slick({
             arrows: true,
             dots: true,
             infinite: true,
@@ -597,7 +597,7 @@
         /* --------------------------------------------------------
             16-2. Product Slider Item Four
         --------------------------------------------------------- */
-        $('.ltn__product-slider-item-four-active').slick({
+        $('.nikhoj__product-slider-item-four-active').slick({
             arrows: true,
             dots: true,
             infinite: true,
@@ -641,7 +641,7 @@
         /* --------------------------------------------------------
             16-2. Product Slider Item Four
         --------------------------------------------------------- */
-        $('.ltn__product-slider-item-four-active-full-width').slick({
+        $('.nikhoj__product-slider-item-four-active-full-width').slick({
             arrows: true,
             dots: true,
             infinite: true,
@@ -713,7 +713,7 @@
         /* --------------------------------------------------------
             16-3. Related Product Slider One
         --------------------------------------------------------- */
-        $('.ltn__related-product-slider-one-active').slick({
+        $('.nikhoj__related-product-slider-one-active').slick({
             arrows: true,
             dots: false,
             infinite: true,
@@ -754,7 +754,7 @@
         /* --------------------------------------------------------
             ## Related Product Slider One
         --------------------------------------------------------- */
-        $('.ltn__related-product-slider-two-active').slick({
+        $('.nikhoj__related-product-slider-two-active').slick({
             arrows: true,
             dots: false,
             infinite: true,
@@ -795,7 +795,7 @@
         /* --------------------------------------------------------
             ## Related Product Slider One
         --------------------------------------------------------- */
-        $('.ltn__popular-product-widget-active').slick({
+        $('.nikhoj__popular-product-widget-active').slick({
             arrows: false,
             dots: true,
             infinite: true,
@@ -809,7 +809,7 @@
         /* --------------------------------------------------------
             17. Tab Product Slider One
         --------------------------------------------------------- */
-        $('.ltn__tab-product-slider-one-active').slick({
+        $('.nikhoj__tab-product-slider-one-active').slick({
             arrows: true,
             dots: false,
             infinite: true,
@@ -858,7 +858,7 @@
         /* --------------------------------------------------------
             17. Small Product Slider One
         --------------------------------------------------------- */
-        $('.ltn__small-product-slider-active').slick({
+        $('.nikhoj__small-product-slider-active').slick({
             arrows: false,
             dots: true,
             infinite: true,
@@ -908,7 +908,7 @@
         /* --------------------------------------------------------
             18. Blog Slider One
         --------------------------------------------------------- */
-        $('.ltn__blog-slider-one-active').slick({
+        $('.nikhoj__blog-slider-one-active').slick({
             arrows: true,
             dots: false,
             infinite: true,
@@ -960,7 +960,7 @@
         /* --------------------------------------------------------
             19. Testimonial Slider - 1
         --------------------------------------------------------- */
-        $('.ltn__testimonial-slider-active').slick({
+        $('.nikhoj__testimonial-slider-active').slick({
             arrows: true,
             dots: true,
             infinite: true,
@@ -1000,7 +1000,7 @@
         /* --------------------------------------------------------
             20. Testimonial Slider - 2
         --------------------------------------------------------- */
-        $('.ltn__testimonial-slider-2-active').slick({
+        $('.nikhoj__testimonial-slider-2-active').slick({
             arrows: true,
             dots: false,
             infinite: true,
@@ -1046,7 +1046,7 @@
         /* --------------------------------------------------------
             21. Testimonial Slider - 3
         --------------------------------------------------------- */
-        $('.ltn__testimonial-slider-3-active').slick({
+        $('.nikhoj__testimonial-slider-3-active').slick({
             arrows: true,
             centerMode: true,
             centerPadding: '80px',
@@ -1105,7 +1105,7 @@
         /* --------------------------------------------------------
             21. Testimonial Slider - 5
         --------------------------------------------------------- */
-        $('.ltn__testimonial-slider-5-active').slick({
+        $('.nikhoj__testimonial-slider-5-active').slick({
             arrows: true,
             centerMode: false,
             centerPadding: '80px',
@@ -1156,11 +1156,11 @@
                 }
             ]
         });
-        
+
         /* --------------------------------------------------------
             21. Testimonial Slider - 6
         --------------------------------------------------------- */
-        $('.ltn__testimonial-slider-6-active').slick({
+        $('.nikhoj__testimonial-slider-6-active').slick({
             arrows: true,
             dots: false,
             centerMode: false,
@@ -1213,7 +1213,7 @@
         /* --------------------------------------------------------
             22. Category Slider
         --------------------------------------------------------- */
-        $('.ltn__category-slider-active').slick({
+        $('.nikhoj__category-slider-active').slick({
             arrows: true,
             dots: false,
             infinite: true,
@@ -1273,7 +1273,7 @@
         /* --------------------------------------------------------
             23. Image Slide  - 1 (Screenshot) 
         --------------------------------------------------------- */
-        $('.ltn__image-slider-1-active').slick({
+        $('.nikhoj__image-slider-1-active').slick({
             arrows: true,
             dots: false,
             infinite: true,
@@ -1314,7 +1314,7 @@
         /* --------------------------------------------------------
             24. Image Slide - 2
         --------------------------------------------------------- */
-        $('.ltn__image-slider-2-active').slick({
+        $('.nikhoj__image-slider-2-active').slick({
             rtl: false,
             arrows: true,
             dots: false,
@@ -1362,7 +1362,7 @@
         /* --------------------------------------------------------
             25. Image Slide - 3
         --------------------------------------------------------- */
-        $('.ltn__image-slider-3-active').slick({
+        $('.nikhoj__image-slider-3-active').slick({
             rtl: false,
             arrows: true,
             dots: false,
@@ -1409,7 +1409,7 @@
         /* --------------------------------------------------------
             26. Image Slide - 4 
         --------------------------------------------------------- */
-        $('.ltn__image-slider-4-active').slick({
+        $('.nikhoj__image-slider-4-active').slick({
             rtl: false,
             arrows: true,
             dots: false,
@@ -1462,7 +1462,7 @@
         /* --------------------------------------------------------
             ## Image Slide - 5
         --------------------------------------------------------- */
-        $('.ltn__image-slider-5-active').slick({
+        $('.nikhoj__image-slider-5-active').slick({
             rtl: false,
             arrows: true,
             dots: false,
@@ -1533,8 +1533,8 @@
         /* --------------------------------------------------------
             27. Brand Logo
         --------------------------------------------------------- */
-        if($('.ltn__brand-logo-active').length){
-            $('.ltn__brand-logo-active').slick({
+        if ($('.nikhoj__brand-logo-active').length) {
+            $('.nikhoj__brand-logo-active').slick({
                 rtl: false,
                 arrows: false,
                 dots: false,
@@ -1575,7 +1575,7 @@
         /* --------------------------------------------------------
             # upcoming-project-slider-1
         --------------------------------------------------------- */
-        $('.ltn__upcoming-project-slider-1-active').slick({
+        $('.nikhoj__upcoming-project-slider-1-active').slick({
             arrows: true,
             dots: false,
             infinite: true,
@@ -1617,9 +1617,9 @@
 
 
         /* --------------------------------------------------------
-            # ltn__search-by-place-slider-1-active
+            # nikhoj__search-by-place-slider-1-active
         --------------------------------------------------------- */
-        $('.ltn__search-by-place-slider-1-active').slick({
+        $('.nikhoj__search-by-place-slider-1-active').slick({
             arrows: true,
             dots: false,
             infinite: true,
@@ -1669,8 +1669,8 @@
         /* --------------------------------------------------------
             28. Blog Gallery (Blog Page )
         --------------------------------------------------------- */
-        if($('.ltn__blog-gallery-active').length){
-            $('.ltn__blog-gallery-active').slick({
+        if ($('.nikhoj__blog-gallery-active').length) {
+            $('.nikhoj__blog-gallery-active').slick({
                 rtl: false,
                 arrows: true,
                 dots: false,
@@ -1706,23 +1706,23 @@
         /* --------------------------------------------------------
             30. Counter Up
         --------------------------------------------------------- */
-        // $('.ltn__counter').counterUp();
+        // $('.nikhoj__counter').counterUp();
 
         $('.counter').counterUp({
-          delay: 10,
-          time: 2000
+            delay: 10,
+            time: 2000
         });
-        $('.counter').addClass('animated fadeInDownBig');  
+        $('.counter').addClass('animated fadeInDownBig');
         $('h3').addClass('animated fadeIn');
-        
+
 
         /* --------------------------------------------------------
             31. Instagram Feed
         --------------------------------------------------------- */
-        if($('.ltn__instafeed').length){
+        if ($('.nikhoj__instafeed').length) {
             $.instagramFeed({
                 'username': 'envato',
-                'container': ".ltn__instafeed",
+                'container': ".nikhoj__instafeed",
                 'display_profile': false,
                 'display_biography': false,
                 'display_gallery': true,
@@ -1730,9 +1730,9 @@
                 'items': 12,
                 "image_size": "600", /* 320 */
             });
-            $('.ltn__instafeed').on("DOMNodeInserted", function (e) {
+            $('.nikhoj__instafeed').on("DOMNodeInserted", function (e) {
                 if (e.target.className == 'instagram_gallery') {
-                    $('.ltn__instafeed-slider-2 .' + e.target.className).slick({
+                    $('.nikhoj__instafeed-slider-2 .' + e.target.className).slick({
                         infinite: true,
                         slidesToShow: 3,
                         slidesToScroll: 1,
@@ -1750,7 +1750,7 @@
                             }
                         }]
                     })
-                    $('.ltn__instafeed-slider-1 .' + e.target.className).slick({
+                    $('.nikhoj__instafeed-slider-1 .' + e.target.className).slick({
                         infinite: true,
                         slidesToShow: 5,
                         slidesToScroll: 1,
@@ -1786,17 +1786,17 @@
         /* ---------------------------------------------------------
             32. Price Slider
         --------------------------------------------------------- */
-        $( ".slider-range" ).slider({
+        $(".slider-range").slider({
             range: true,
             min: 50,
             max: 5000,
-            values: [ 50, 1500 ],
-            slide: function( event, ui ) {
-                $( ".amount" ).val( "$" + ui.values[ 0 ] + " - $" + ui.values[ 1 ] );
+            values: [50, 1500],
+            slide: function (event, ui) {
+                $(".amount").val("$" + ui.values[0] + " - $" + ui.values[1]);
             }
         });
-        $( ".amount" ).val( "$" + $( ".slider-range" ).slider( "values", 0 ) +
-        " - $" + $( ".slider-range" ).slider( "values", 1 ) ); 
+        $(".amount").val("$" + $(".slider-range").slider("values", 0) +
+            " - $" + $(".slider-range").slider("values", 1));
 
 
         /* --------------------------------------------------------
@@ -1804,16 +1804,16 @@
         -------------------------------------------------------- */
         $(".cart-plus-minus").prepend('<div class="dec qtybutton">-</div>');
         $(".cart-plus-minus").append('<div class="inc qtybutton">+</div>');
-        $(".qtybutton").on("click", function() {
+        $(".qtybutton").on("click", function () {
             var $button = $(this);
             var oldValue = $button.parent().find("input").val();
             if ($button.text() == "+") {
                 var newVal = parseFloat(oldValue) + 1;
-            } 
+            }
             else {
                 if (oldValue > 0) {
                     var newVal = parseFloat(oldValue) - 1;
-                } 
+                }
                 else {
                     newVal = 0;
                 }
@@ -1822,7 +1822,7 @@
         });
 
 
-	    /* --------------------------------------------------------
+        /* --------------------------------------------------------
             34. scrollUp active
         -------------------------------------------------------- */
         $.scrollUp({
@@ -1833,23 +1833,23 @@
         });
 
 
-	    /* --------------------------------------------------------
+        /* --------------------------------------------------------
             35. Parallax active ( About Section  )
         -------------------------------------------------------- */
         /* 
         > 1 page e 2 ta call korle 1 ta kaj kore 
         */
-        if($('.ltn__parallax-effect-active').length){
-            var scene = $('.ltn__parallax-effect-active').get(0);
+        if ($('.nikhoj__parallax-effect-active').length) {
+            var scene = $('.nikhoj__parallax-effect-active').get(0);
             var parallaxInstance = new Parallax(scene);
         }
 
 
-	    /* --------------------------------------------------------
+        /* --------------------------------------------------------
             36. Testimonial Slider 4
         -------------------------------------------------------- */
-        var ltn__testimonial_quote_slider = $('.ltn__testimonial-slider-4-active');
-        ltn__testimonial_quote_slider.slick({
+        var nikhoj__testimonial_quote_slider = $('.nikhoj__testimonial-slider-4-active');
+        nikhoj__testimonial_quote_slider.slick({
             autoplay: true,
             autoplaySpeed: 3000,
             dots: false,
@@ -1895,22 +1895,22 @@
         });
 
         /* have to write code for bind it with static images */
-        ltn__testimonial_quote_slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
+        nikhoj__testimonial_quote_slider.on('beforeChange', function (event, slick, currentSlide, nextSlide) {
             var liIndex = nextSlide + 1;
             var slideImageliIndex = (slick.slideCount == liIndex) ? liIndex - 1 : liIndex;
-            var cart = $('.ltn__testimonial-slider-4 .slick-slide[data-slick-index="' + slideImageliIndex + '"]').find('.ltn__testimonial-image');
-            var imgtodrag = $('.ltn__testimonial-quote-menu li:nth-child(' + liIndex + ')').find("img").eq(0);
+            var cart = $('.nikhoj__testimonial-slider-4 .slick-slide[data-slick-index="' + slideImageliIndex + '"]').find('.nikhoj__testimonial-image');
+            var imgtodrag = $('.nikhoj__testimonial-quote-menu li:nth-child(' + liIndex + ')').find("img").eq(0);
             if (imgtodrag) {
                 AnimateTestimonialImage(imgtodrag, cart)
             }
         });
 
         /* have to write code for bind static image to slider accordion to slide index of images */
-        $(document).on('click', '.ltn__testimonial-quote-menu li', function (e) {
+        $(document).on('click', '.nikhoj__testimonial-quote-menu li', function (e) {
             var el = $(this);
             var elIndex = el.prevAll().length;
-            ltn__testimonial_quote_slider.slick('slickGoTo', elIndex);
-            var cart = $('.ltn__testimonial-slider-4 .slick-slide[data-slick-index="' + elIndex + '"]').find('.ltn__testimonial-image');
+            nikhoj__testimonial_quote_slider.slick('slickGoTo', elIndex);
+            var cart = $('.nikhoj__testimonial-slider-4 .slick-slide[data-slick-index="' + elIndex + '"]').find('.nikhoj__testimonial-image');
             var imgtodrag = el.find("img").eq(0);
             if (imgtodrag) {
                 AnimateTestimonialImage(imgtodrag, cart)
@@ -1950,7 +1950,7 @@
         /* --------------------------------------------------------
             Newsletter Popup
         -------------------------------------------------------- */
-        $('#ltn__newsletter_popup').modal('show');
+        $('#nikhoj__newsletter_popup').modal('show');
 
 
 
@@ -1961,21 +1961,21 @@
     /* --------------------------------------------------------
         36. Header menu sticky
     -------------------------------------------------------- */
-    $(window).on('scroll',function() {    
+    $(window).on('scroll', function () {
         var scroll = $(window).scrollTop();
         if (scroll < 445) {
-            $(".ltn__header-sticky").removeClass("sticky-active");
+            $(".nikhoj__header-sticky").removeClass("sticky-active");
         } else {
-            $(".ltn__header-sticky").addClass("sticky-active");
+            $(".nikhoj__header-sticky").addClass("sticky-active");
         }
-    }); 
+    });
 
 
-    $(window).on('load',function(){
+    $(window).on('load', function () {
         /*-----------------
             preloader
         ------------------*/
-        if($('#preloader').length){
+        if ($('#preloader').length) {
             var preLoder = $("#preloader");
             preLoder.fadeOut(1000);
 
@@ -1985,5 +1985,5 @@
     });
 
 
-  
+
 })(jQuery);
