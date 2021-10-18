@@ -881,6 +881,11 @@ ol li {
   box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
 }
 
+.nikhoj__appointment-area.pt-115---.pb-120 {
+  background: #F2F6F7;
+  padding-top: 45px;
+}
+
 .nikhoj__custom-icon {
   position: relative;
 }
@@ -1052,7 +1057,26 @@ textarea {
   border-radius: 0;
   padding-right: 40px;
 }
-
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="submit"],
+textarea {
+  background-color: var(--white);
+  border: 1px solid rgb(0 0 0 / 10%);
+  border-color: var(--border-color-9);
+  height: 65px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  padding-left: 20px;
+  font-size: 16px;
+  color: var(--nikhoj__paragraph-color);
+  width: 100%;
+  margin-bottom: 30px;
+  border-radius: 0;
+  padding-right: 40px;
+  /* box-shadow: 0 1px 2px rgb(0 0 0 / 10%); */
+}
 input[type="text"]::-webkit-input-placeholder,
 input[type="email"]::-webkit-input-placeholder,
 input[type="password"]::-webkit-input-placeholder,
