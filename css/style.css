@@ -6083,10 +6083,13 @@ ul.wp-block-latest-posts.is-grid.alignwide {
 }
 
 .nikhoj__header-middle-area.nikhoj__header-sticky.nikhoj__sticky-bg-white {
-  border-bottom: 1px solid #e6f0ff !important;
+  /* border-bottom: 1px solid rgb(0 0 0 / 10%) !important; */
+  /* margin-bottom: 35px !important; */
+  box-shadow: 0 1px 2px rgb(0 0 0 / 10%);
+}
+.mb-35 {
   margin-bottom: 35px !important;
 }
-
 .button-primary {
   padding: 18px 24px;
   border-radius: 4px;
