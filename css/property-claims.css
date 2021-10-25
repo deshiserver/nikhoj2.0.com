@@ -164,3 +164,10 @@
     font-weight: 500;
     list-style-type: none;
 }
+
+/* Call to action area  */
+.call-to-action.header6-bg.section-padding {
+    background-image: url('img/slider/hero_bg.png');
+    background-size: cover;
+    padding: 150px 0;
+}
