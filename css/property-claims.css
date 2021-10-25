@@ -1,3 +1,7 @@
+.section-padding {
+    padding: 50px 0;
+}
+
 .property-hero {
     width: auto;
     height: auto;
@@ -67,3 +71,27 @@
     background-size: cover;
     background-position: left;
 } */
+
+/* Check list item  */
+.list {
+    margin-top: 0px;
+    margin-bottom: 0px;
+    padding-left: 0px;
+    list-style-type: none;
+}
+
+.check-list-item {
+    overflow: visible;
+    padding: 0px 51px 20px;
+    background-image: url("https://assets.website-files.com/5fe22b52285ac81c0bafbab6/5ff4c3c62d2ad11b77d5a561_checkmark.svg");
+    background-position: 0% 0%;
+    background-size: auto;
+    background-repeat: no-repeat;
+    font-size: 20px;
+    line-height: 24px;
+    text-align: left;
+}
+
+.buttons-header {
+    margin-top: 15px;
+}
