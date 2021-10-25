@@ -36,3 +36,34 @@
     margin-bottom: 20px;
     margin-left: 149px;
 }
+
+.solution-num {
+    color: #F9354E;
+}
+
+.solution-step {
+    text-align: left;
+    border: 1px solid rgb(0 0 0 / 10%);
+    padding: 30px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    border-radius: 10px;
+    transition: .3s;
+    /*! box-shadow: 0 1px 2px rgb(0 0 0 / 10%); */
+}
+
+.solution-step:hover .solution-text {
+    color: #F9354E;
+    transition: .3s;
+}
+
+.solution-step:hover .solution-num {
+    color: #05152F;
+    transition: .3s;
+}
+
+/* .header1-bg {
+    background-image: url('https://assets.website-files.com/5fe22b52285ac81c0bafbab6/5ff742ee5e60adf0511d17df_yellow-blob-1.svg ');
+    background-size: cover;
+    background-position: left;
+} */
